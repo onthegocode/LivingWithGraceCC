@@ -1,0 +1,1336 @@
+/* Variables Start */
+:root {
+	--clr-bg: #fef6ed;
+	--clr-primary: #31210f;
+	--clr-secondary: #ffffff;
+	--clr-accent: #e97f91;
+	--ff-title: "Cormorant", serif;
+	--ff-body: "Nunito Sans", sans-serif;
+	--hover-transition: all 0.3s ease;
+	--max-screen: 1200px;
+}
+/* Variables End */
+
+/* Default Settings Start*/
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+	font-size: 62.5%; /*1rem = 10px*/
+}
+
+body {
+	/*Temporary get rid of it*/
+	overflow-x: hidden;
+	font-family: var(--ff-body);
+	font-size: inherit;
+	color: var(--clr-primary);
+}
+a {
+	text-decoration: none;
+}
+/* Default Settings End*/
+
+/* Text Headings Start */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--ff-title);
+}
+
+h1 {
+	font-size: 6.4rem;
+	line-height: 1;
+}
+
+h2 {
+	color: rgba(49, 33, 15, 0.06);
+	font-size: 11.4rem;
+	text-wrap: nowrap;
+	z-index: 0;
+}
+
+h3 {
+	font-size: 5rem;
+	margin-bottom: 2rem;
+	z-index: 2;
+}
+
+h4 {
+	font-size: 2.4rem;
+}
+
+h5 {
+	font-size: 2.4rem;
+}
+/* Text Headings End */
+
+/* Text Styling Start */
+p {
+	font-size: 1.6rem;
+	line-height: 150%;
+}
+/* Text Styling End */
+
+/* Utility Classes Start */
+/* Here is where we put:
+- Background faded text
+- Image styles
+- Flower corner addon 
+- Background svg curve 
+- And Row class like how bootstrap does it.
+- Sections like max width, to keep things the same and reduce css code
+- Anything that can be reuseable throughout the website thats not unique to a section
+ */
+
+.open {
+	display: flex !important;
+	opacity: 1 !important;
+	visibility: visible !important;
+}
+
+.open div {
+	opacity: 0% !important;
+}
+.open svg {
+	opacity: 100% !important;
+}
+/* Curved Background Start*/
+.curvedBackground {
+	position: relative;
+	overflow: hidden;
+}
+.curvedBackground::before {
+	border-radius: 100%;
+	position: absolute;
+	background: var(--clr-bg);
+	right: -500px;
+	left: -500px;
+	top: -200px;
+	content: "";
+	bottom: 0;
+	z-index: -2;
+}
+
+.aboutUsSection {
+	position: relative;
+}
+
+.curvedBackground-w {
+	position: absolute;
+	overflow: hidden;
+	height: 350px;
+	width: 100%;
+}
+.curvedBackground-w::before {
+	border-radius: 100%;
+	position: absolute;
+	background: var(--clr-secondary);
+	right: -500px;
+	left: -500px;
+	top: -400px;
+	content: "";
+	bottom: 200px;
+	z-index: -1;
+}
+
+/* Curved Background End */
+.container {
+	max-width: var(--max-screen);
+	margin: 0 auto;
+	padding: 0 2rem;
+}
+
+.imgCard-Container {
+	position: relative;
+}
+
+.imgCard-Container .imgB {
+	position: absolute;
+	left: -18%;
+	bottom: -14%;
+	width: 8rem;
+	transform: rotate(180deg);
+}
+
+.imgCard-Container .imgT {
+	position: absolute;
+	top: -10%;
+	right: -16%;
+	width: 8rem;
+	transform: rotate(-6deg);
+}
+
+.imgCard {
+	width: 40rem;
+	height: 48rem;
+	border-radius: 18rem 6rem 18rem 0;
+}
+
+.headingText {
+	position: relative;
+	left: 0%;
+}
+
+.header .headingText h2 {
+	position: absolute;
+	top: -8%;
+}
+
+.headingText h2 {
+	position: absolute;
+	top: -60%;
+}
+.noMove {
+	overflow: hidden !important;
+}
+/* Utility Classes End */
+
+/* Default Buttons Start */
+.btn:link,
+.btn:visited {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: fit-content;
+	background-color: var(--clr-accent);
+	color: var(--clr-secondary);
+	border: 2px solid var(--clr-accent);
+	padding: 1rem 2.4rem;
+	border-radius: 1000px;
+	font-size: 1.6rem;
+	margin-top: 1rem;
+	transition: var(--hover-transition);
+}
+
+.btn:hover,
+.btn:active {
+	background-color: transparent;
+	color: var(--clr-accent);
+}
+/* All button styles and hover animations/effects */
+/* Default Buttons End */
+
+/* Navbar Start */
+header {
+	background-color: var(--clr-bg);
+	position: relative;
+}
+
+.burgerMenuLink {
+	display: none !important;
+	position: relative;
+	flex-direction: column;
+	gap: 0.6rem;
+	transition: var(--hover-transition);
+}
+.burgerMenuLink svg {
+	opacity: 0;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	width: 40px;
+	height: 25px;
+	z-index: 999999;
+	transition: var(--hover-transition);
+}
+.burgerMenu-1 {
+	position: relative;
+	width: 40px;
+	height: 4px;
+	border-radius: 100px;
+	background-color: #31210f;
+	transition: var(--hover-transition);
+}
+.burgerMenu-2 {
+	width: 40px;
+	height: 4px;
+	border-radius: 100px;
+	background-color: #31210f;
+	transition: var(--hover-transition);
+}
+
+.burgerMenu-3 {
+	width: 40px;
+	height: 4px;
+	border-radius: 100px;
+	background-color: #31210f;
+	transition: var(--hover-transition);
+}
+
+.navbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 1.6rem;
+	padding-top: 2rem;
+	z-index: 999;
+}
+.navLogo {
+	max-width: 26rem;
+}
+
+.navMenu {
+	display: flex;
+	gap: 5rem;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	transition: var(--hover-transition);
+}
+
+.navAccount {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+}
+
+.navMenu a:link,
+.navMenu a:visited,
+.navMenu a:link svg path,
+.navMenu a:visited svg path {
+	display: flex;
+	color: var(--clr-primary);
+	transition: var(--hover-transition);
+}
+
+.navMenu a:hover,
+.navMenu a:active {
+	color: var(--clr-accent);
+}
+.navMenu a:hover svg path,
+.navMenu a:hover svg path {
+	stroke: var(--clr-accent);
+}
+
+/* Navbar End */
+
+/* Header Section Start */
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 8rem 0; /*Maybe reuse*/
+	gap: 3rem;
+	padding-bottom: 20rem;
+}
+
+.header .imgCard {
+	background: url("/media/headerImg.jpg") center/cover no-repeat;
+}
+
+.headerContent {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	padding-bottom: 2rem;
+	z-index: 2;
+	max-width: 660px;
+}
+
+/* Header Section End */
+
+/* About Us Section Start */
+
+.about {
+	padding: 20rem 0;
+}
+
+.aboutUs {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 14rem;
+	padding-top: 12rem;
+}
+
+.aboutUsContent {
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+}
+
+.aboutUs .imgCard {
+	background: url("/media/headshot.jpeg") center/cover no-repeat;
+}
+
+.aboutCards {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 1rem;
+}
+
+.aboutCard {
+	background-color: var(--clr-bg);
+	padding: 0.6rem 3rem;
+	border-radius: 3rem 7rem 3rem 0;
+	color: var(--clr-primary);
+	text-align: center;
+	max-width: 200px;
+	max-height: 100px;
+}
+.aboutCard-special {
+	background-color: var(--clr-accent);
+	color: var(--clr-secondary);
+}
+
+.aboutCard div {
+	position: relative;
+	font-family: var(--ff-title);
+	font-weight: bold;
+	font-size: 5rem;
+}
+
+.aboutCard div::after {
+	content: "+";
+	font-size: 3rem;
+	vertical-align: text-top;
+}
+
+.aboutCard p {
+	font-family: var(--ff-title);
+	font-weight: bold;
+	font-size: 1.8rem;
+}
+
+/* About Us Section End */
+
+/* About Benefits Section Start */
+.curvedBackground-benefits {
+	position: relative;
+	overflow: hidden;
+}
+.curvedBackground-benefits::before {
+	border-radius: 100%;
+	position: absolute;
+	background: var(--clr-bg);
+	right: -1000px;
+	left: -1000px;
+	top: -200px;
+	content: "";
+	bottom: 0;
+	z-index: -2;
+}
+
+.benefits {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 6rem;
+	padding: 6rem 2rem;
+	margin-bottom: 6rem;
+}
+
+.benefitsContent {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+
+.benefitsCard-special {
+	position: relative;
+	background-color: var(--clr-accent);
+	border-radius: 60px 100px 0px 100px;
+}
+
+.benefitsCard-special img {
+	position: absolute;
+	bottom: -14%;
+	left: -16%;
+	width: 8rem;
+	transform: rotate(180deg);
+}
+
+.benefitsCard-special .benefitsCard {
+	color: var(--clr-secondary);
+}
+
+.benefitsCard {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	padding: 3.4rem;
+	gap: 1rem;
+	max-width: 250px;
+}
+
+.benefitsCard-special .benefitsCard a:link,
+.benefitsCard-special .benefitsCard a:visited,
+.benefitsCard-special .benefitsCard a:link svg,
+.benefitsCard-special .benefitsCard a:visited svg,
+.benefitsCard-special .benefitsCard a:link svg path,
+.benefitsCard-special .benefitsCard a:visited svg path {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.6rem;
+	font-size: 1.6rem;
+	color: var(--clr-secondary);
+	stroke: var(--clr-secondary);
+	transition: var(--hover-transition);
+}
+
+.benefitsLink {
+	margin-top: 1rem;
+}
+
+.benefitsCard a:link,
+.benefitsCard a:visited,
+.benefitsCard a:link svg,
+.benefitsCard a:visited svg,
+.benefitsCard a:link svg path,
+.benefitsCard a:visited svg path {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.6rem;
+	font-size: 1.6rem;
+	color: var(--clr-primary);
+	transition: var(--hover-transition);
+}
+
+.benefitsCard a:hover,
+.benefitsCard a:active,
+.benefitsCard a:hover svg,
+.benefitsCard a:active svg,
+.benefitsCard a:hover svg path,
+.benefitsCard a:active svg path {
+	color: var(--clr-accent);
+	stroke: var(--clr-accent);
+	margin-left: 0.6rem;
+}
+
+/* About Benefits Section End */
+
+/* Expertise Section Start */
+.expertise {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 2rem;
+	width: 100%;
+}
+
+.expertiseContent {
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+	max-width: 500px;
+}
+.expertise .imgCard {
+	background: url("/media/expertise.jpg") center/cover no-repeat;
+}
+/* Expertise Section End */
+
+/* Services Section Start */
+.services {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding-top: 16rem;
+	gap: 6rem;
+}
+
+.services .headingText h2 {
+	left: -20%;
+}
+
+.serviceContent {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	gap: 1rem;
+}
+
+.serviceCard {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-self: center;
+	text-align: center;
+	padding: 5rem 4.2rem;
+	gap: 2rem;
+	box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
+	border-radius: 64px 126px 0px 126px;
+	max-width: 360px;
+}
+.serviceCardSpecial {
+	position: relative;
+	background-color: var(--clr-accent);
+	color: var(--clr-secondary);
+}
+.serviceCardSpecial ul li::after {
+	background-color: #fff !important;
+}
+.serviceCardSpecial img {
+	position: absolute;
+	bottom: -6%;
+	left: -10%;
+	width: 8rem;
+	transform: rotate(180deg);
+}
+
+.serviceCardSpecial .btn:link,
+.serviceCardSpecial .btn:visited {
+	background-color: var(--clr-secondary);
+	color: var(--clr-primary);
+	border-color: #ffffff;
+	transition: var(--hover-transition);
+}
+
+.serviceCardSpecial .btn:hover,
+.serviceCardSpecial .btn:active {
+	color: var(--clr-secondary);
+	background-color: transparent;
+}
+
+.serviceCard ul li {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.serviceCard ul li::after {
+	content: "";
+	border-top-style: solid;
+	border-top-width: 1px;
+	width: 44%;
+	margin-top: 1.2rem;
+	background-color: var(--clr-primary);
+}
+
+.serviceCard h4 {
+	font-size: 3rem;
+	text-wrap: nowrap;
+}
+
+.serviceCard .btn {
+	margin: 0 auto;
+}
+
+.serviceCard ul {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	list-style: none;
+	font-size: 1.6rem;
+}
+
+.serviceCard-price {
+	font-family: var(--ff-title);
+	font-size: 2.5rem;
+	font-weight: bold;
+	margin-bottom: 1rem;
+}
+
+.serviceCard-price span {
+	font-size: 6.6rem;
+}
+
+/* Services Section End */
+
+/* Blog Section Start */
+.blog {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 6rem;
+	padding-top: 16rem;
+	margin-bottom: 12rem;
+}
+
+.blog .headingText h2 {
+	left: -60%;
+}
+
+.blogContent {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+	gap: 4rem;
+}
+
+.blogCard {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	max-width: 380px;
+}
+.blogDate {
+	display: flex;
+	gap: 1rem;
+}
+.blogDate p {
+	font-size: 1.2rem;
+	color: #8c4c57;
+}
+
+.blogImg {
+	max-width: 400px;
+	height: 280px;
+	overflow: hidden;
+}
+
+.blogImg img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.btn-seemore:link,
+.btn-seemore:visited,
+.btn-seemore:link .arrow,
+.btn-seemore:visited .arrow {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+
+	transition: var(--hover-transition);
+}
+
+.btn-seemore:hover .arrow {
+	/* Animations try not to use margin */
+	transform: translateY(
+		1rem
+	); /*Use this over margin for animations as it doesn't move the layout, so no layout shifts*/
+}
+
+.seemoreBtn {
+	color: var(--clr-accent);
+	font-weight: 500;
+	font-size: 1.6rem;
+}
+
+/* Blog Section End */
+
+/* Footer Start */
+.footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding-top: 4rem;
+}
+
+.footerContent {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+}
+
+.footerContent ul {
+	display: flex;
+	gap: 4rem;
+	justify-self: center;
+	align-items: center;
+	list-style: none;
+	margin: 2rem 0;
+}
+
+.footerContent ul li a:link,
+.footerContent ul li a:visited {
+	font-size: 1.6rem;
+	font-weight: bold;
+	color: var(--clr-primary);
+	transition: var(--hover-transition);
+}
+
+.footerContent ul li a:hover,
+.footerContent ul li a:active {
+	color: var(--clr-accent);
+}
+
+.footerLogo img {
+	max-width: 280px;
+}
+
+.footerEmail a:link,
+.footerEmail a:visited {
+	font-size: 1.2rem;
+	color: var(--clr-primary);
+	transition: var(--hover-transition);
+}
+
+.footerEmail a:hover,
+.footerEmail a:active {
+	color: var(--clr-accent);
+}
+
+.footerNumber {
+	font-size: 1.2rem;
+	color: var(--clr-primary);
+}
+
+.footerNumber a:link,
+.footerNumber a:visited {
+	font-size: 1.2rem;
+	color: inherit;
+	transition: var(--hover-transition);
+}
+
+.footerNumber a:hover,
+.footerNumber a:active {
+	color: var(--clr-accent);
+}
+
+.footerSocial {
+	display: flex;
+	gap: 1rem;
+}
+.footerSocial a:link svg path,
+.footerSocial a:visited svg path {
+	transition: var(--hover-transition);
+}
+.footerSocial .fb:hover svg path,
+.footerSocial .fb:active svg path {
+	fill: var(--clr-accent);
+}
+
+.footerSocial .insta:hover svg path,
+.footerSocial .insta:active svg path {
+	stroke: var(--clr-accent);
+}
+
+.ownership {
+	display: flex;
+	flex-direction: column;
+	justify-self: center;
+	align-items: center;
+	margin-top: 2rem;
+	text-align: center;
+}
+.ownership::before {
+	content: "";
+	width: 80%;
+	margin: 0 auto;
+	height: 1px;
+	background-color: rgba(49, 33, 15, 0.2);
+	margin-bottom: 2rem;
+}
+
+.ownership p {
+	font-size: 1.2rem;
+}
+
+.ownership a:link,
+.ownership a:visited {
+	font-weight: bold;
+	text-decoration: underline;
+	color: var(--clr-primary);
+	transition: var(--hover-transition);
+}
+
+.ownership a:hover,
+.ownership a:active {
+	color: var(--clr-accent);
+}
+
+.curvedBackground-f {
+	position: absolute;
+	overflow: hidden;
+	width: 100%;
+}
+
+.curvedBackground-f::before {
+	border-radius: 100%;
+	position: absolute;
+	background: var(--clr-bg);
+	right: -500px;
+	left: -500px;
+	top: 0;
+	content: "";
+	bottom: -200px;
+	z-index: -1;
+}
+/* Footer End */
+
+/* Animations Start*/
+/* Animations End*/
+
+/* Media Queries Start*/
+@media only screen and (max-width: 1180px) {
+	.serviceCard h4 {
+		font-size: 3rem;
+		text-wrap: wrap;
+	}
+}
+
+@media only screen and (max-width: 1130px) {
+	.aboutCard {
+		padding: 0.2rem 1.6rem;
+	}
+	.aboutCard div {
+		font-size: 4rem;
+	}
+
+	.aboutCard div::after {
+		content: "+";
+		font-size: 2rem;
+		vertical-align: text-top;
+	}
+
+	.aboutCard p {
+		font-family: var(--ff-title);
+		font-weight: bold;
+		font-size: 1.6rem;
+	}
+}
+
+@media only screen and (max-width: 1080px) {
+	.headerContent h2 {
+		font-size: 10rem;
+		line-height: 100%;
+		text-wrap: wrap;
+	}
+	h1 {
+		font-size: 6rem;
+	}
+	h2 {
+		font-size: 10rem;
+	}
+	.services .headingText h2 {
+		left: -12%;
+	}
+}
+
+@media only screen and (max-width: 1000px) {
+	.benefitsContent {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		gap: 2rem;
+	}
+	.benefitsCard {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		padding: 6rem;
+		gap: 1rem;
+		max-width: 360px;
+	}
+}
+
+@media only screen and (max-width: 960px) {
+	.imgCard {
+		width: 32rem;
+		height: 38rem;
+		border-radius: 18rem 6rem 18rem 0;
+	}
+	.headerContent h2 {
+		font-size: 8rem;
+		line-height: 100%;
+		text-wrap: wrap;
+	}
+	.headingText h2 {
+		top: -40%;
+	}
+	h1 {
+		font-size: 5rem;
+	}
+	h2 {
+		font-size: 8rem;
+	}
+	.services .headingText h2 {
+		left: -12%;
+	}
+	h3 {
+		font-size: 4.2rem;
+	}
+	p {
+		font-size: 1.4rem;
+		line-height: 150%;
+	}
+	.btn:link,
+	.btn:visited {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: fit-content;
+		background-color: var(--clr-accent);
+		color: var(--clr-secondary);
+		border: 2px solid var(--clr-accent);
+		padding: 1rem 2.4rem;
+		border-radius: 1000px;
+		font-size: 1.4rem;
+		margin-top: 1rem;
+		transition: var(--hover-transition);
+	}
+	.navMenu {
+		opacity: 0;
+		visibility: hidden;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		top: 0%;
+		margin-left: -2rem; /*Fix in future*/
+		background-color: var(--clr-bg);
+		z-index: 99999;
+	}
+	.navMenu a:link,
+	.navMenu a:visited {
+		font-size: 4rem;
+		font-weight: bold;
+	}
+	.imgCard-Container .imgB {
+		position: absolute;
+		left: -24%;
+		bottom: -18%;
+		width: 8rem;
+		transform: rotate(180deg);
+	}
+	.imgCard-Container .imgT {
+		position: absolute;
+		top: -14%;
+		right: -20%;
+		width: 8rem;
+		transform: rotate(-6deg);
+	}
+	.benefits h2 {
+		left: 6%;
+	}
+
+	.burgerMenuLink {
+		display: flex !important;
+		opacity: 1;
+		visibility: visible;
+	}
+
+	.serviceContent {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		gap: 4rem;
+	}
+	.serviceCard {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-self: center;
+		text-align: center;
+		padding: 5rem 4.2rem;
+		gap: 2rem;
+		box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
+		border-radius: 64px 126px 0px 126px;
+		width: 100%;
+		max-width: 600px;
+	}
+	.services .headingText h2 {
+		left: -10%;
+	}
+	.serviceCard p {
+		max-width: 400px;
+		align-self: center;
+	}
+
+	.serviceCard ul li {
+		align-self: center;
+		width: 100%;
+		max-width: 300px;
+	}
+	.blog .headingText h2 {
+		left: -50%;
+	}
+	.blogContent {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		justify-content: space-between;
+		align-items: center;
+		gap: 4rem;
+	}
+	.blogCard {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		max-width: 600px;
+	}
+	.blogImg {
+		max-width: 600px;
+		height: 300px;
+		overflow: hidden;
+	}
+}
+@media only screen and (max-width: 910px) {
+	.aboutCard {
+		width: 100%;
+		max-width: 100%;
+	}
+	.aboutUs {
+		gap: 6rem;
+	}
+}
+@media only screen and (max-width: 830px) {
+	.aboutCards {
+		flex-direction: column;
+		gap: 1rem;
+	}
+	.aboutCard div {
+		font-size: 3rem;
+	}
+
+	.aboutCard div::after {
+		content: "+";
+		font-size: 2rem;
+		vertical-align: text-top;
+	}
+}
+
+@media only screen and (max-width: 800px) {
+	.header {
+		flex-direction: column-reverse;
+		gap: 6rem;
+		padding-bottom: 12rem;
+	}
+	.headerContent {
+		text-align: center;
+		align-items: center;
+		max-width: 600px;
+	}
+	.imgB,
+	.imgT {
+		display: none;
+	}
+	.header .headingText h2 {
+		left: 0%;
+		top: 0%;
+	}
+	.imgCard {
+		width: 42rem;
+		height: 44rem;
+	}
+	.about {
+		padding: 12rem 0;
+	}
+	.aboutUs {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		gap: 6rem;
+		max-width: 500px;
+	}
+	.aboutUsContent .headingText h2 {
+		left: 14%;
+	}
+	.expertise {
+		display: flex;
+		flex-direction: column-reverse;
+		text-align: center;
+		gap: 6rem;
+		max-width: 600px;
+	}
+	.expertiseContent {
+		align-items: center;
+	}
+	.expertiseContent .headingText h2 {
+		left: 6%;
+	}
+}
+
+@media only screen and (max-width: 780px) {
+	.benefitsCard {
+		max-width: 42rem;
+	}
+	.benefits {
+		padding-top: 12rem;
+		gap: 0rem;
+	}
+	.benefitsContent {
+		flex-direction: column;
+		gap: 0;
+	}
+	.benefits {
+		margin-bottom: 4rem;
+	}
+	.services {
+		padding-top: 12rem;
+	}
+	.serviceCard {
+		max-width: 42rem;
+	}
+	.blog {
+		padding-top: 12rem;
+	}
+}
+
+@media only screen and (max-width: 620px) {
+	h1 {
+		font-size: 4.2rem;
+	}
+	.headerContent h2 {
+		font-size: 6.4rem;
+	}
+	.headerContent {
+		max-width: 50rem;
+	}
+	.header .headingText h2 {
+		left: 3%;
+	}
+	.aboutUsContent .headingText h2 {
+		left: 16%;
+	}
+	.aboutUsContent {
+		max-width: 60rem;
+	}
+	.expertiseContent {
+		max-width: 60rem;
+	}
+
+	.blogCard {
+		max-width: 60rem;
+	}
+	.blogImg {
+		height: 240px;
+	}
+	.benefitsCard-special img {
+		display: none;
+	}
+}
+@media only screen and (max-width: 500px) {
+	.footerContent ul {
+		flex-direction: column;
+		gap: 2rem;
+	}
+	h2 {
+		font-size: 6rem;
+	}
+	h3 {
+		font-size: 3.6rem;
+	}
+	.headingText h2 {
+		top: -25%;
+	}
+	.aboutUsContent .headingText h2 {
+		left: 25%;
+	}
+	.services .headingText h2 {
+		left: 0%;
+	}
+	.blog .headingText h2 {
+		left: -40%;
+	}
+	.imgCard-Container {
+		width: 100%;
+		height: 100%;
+	}
+	.imgCard {
+		width: 100%;
+	}
+}
+@media only screen and (max-width: 500px) {
+	.navLogo {
+		width: 20rem;
+	}
+	.footerLogo img {
+		width: 20rem;
+	}
+	.imgCard {
+		height: 40rem;
+	}
+	.headingText {
+		width: fit-content;
+	}
+	.aboutUsContent .headingText {
+		margin: 0 auto;
+	}
+	.aboutUsContent .headingText h2 {
+		left: 9%;
+		width: fit-content;
+	}
+}
+
+@media only screen and (max-width: 350px) {
+	.container {
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+	h2 {
+		display: none;
+		width: 0 !important;
+		visibility: hidden;
+	}
+	h3 {
+		text-align: center;
+	}
+	.navMenu {
+		margin-left: 0;
+	}
+	.navMenu a:link,
+	.navMenu a:visited {
+		font-size: 3.6rem;
+	}
+	.about {
+		padding-top: 10rem;
+		padding-bottom: 6rem;
+	}
+	.aboutUs {
+		padding-top: 6rem;
+	}
+	.curvedBackground-w {
+		height: 280px;
+	}
+	.benefits {
+		padding-top: 4rem;
+		margin-bottom: 0;
+	}
+	.benefitsCard {
+		padding: 3rem;
+	}
+	.services {
+		padding-top: 6rem;
+		gap: 3rem;
+	}
+	.serviceCard {
+		gap: 1rem;
+		padding: 4rem 2rem;
+	}
+	.serviceCard h4 {
+		font-size: 2.6rem;
+	}
+	.serviceCard-price span {
+		font-size: 4rem;
+	}
+	.serviceCard-price {
+		font-size: 2rem;
+	}
+	.imgCard {
+		height: 34rem;
+	}
+	.serviceCardSpecial img {
+		display: none;
+	}
+	.serviceCard ul li {
+		font-size: 1.4rem;
+	}
+	.blog {
+		padding-top: 6rem;
+	}
+}
+/* Media Queries End */
