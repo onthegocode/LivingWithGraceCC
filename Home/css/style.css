@@ -326,7 +326,7 @@ header {
 }
 
 .header .imgCard {
-	background: url("/LivingWithGraceCC/media/headerImg.jpg") center/cover no-repeat;
+	background: url("/media/headerImg.jpg") center/cover no-repeat;
 }
 
 .headerContent {
@@ -361,7 +361,7 @@ header {
 }
 
 .aboutUs .imgCard {
-	background: url("/LivingWithGraceCC/media/headshot.jpeg") center/cover no-repeat;
+	background: url("/media/headshot.jpeg") center/cover no-repeat;
 }
 
 .aboutCards {
@@ -532,7 +532,7 @@ header {
 	max-width: 500px;
 }
 .expertise .imgCard {
-	background: url("/LivingWithGraceCC/media/expertise.jpg") center/cover no-repeat;
+	background: url("/media/expertise.jpg") center/cover no-repeat;
 }
 /* Expertise Section End */
 
@@ -548,6 +548,7 @@ header {
 
 .services .headingText h2 {
 	left: -20%;
+	text-wrap: nowrap;
 }
 
 .serviceContent {
@@ -657,6 +658,7 @@ header {
 
 .blog .headingText h2 {
 	left: -60%;
+	text-wrap: nowrap;
 }
 
 .blogContent {
