@@ -1,0 +1,508 @@
+/* 404 */
+/* Variables Start */
+:root {
+	--clr-bg: #fef6ed;
+	--clr-primary: #31210f;
+	--clr-secondary: #ffffff;
+	--clr-accent: #e97f91;
+	--ff-title: "Cormorant", serif;
+	--ff-body: "Nunito Sans", sans-serif;
+	--hover-transition: all 0.3s ease;
+	--max-screen: 1200px;
+}
+/* Variables End */
+
+/* Default Settings Start*/
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+	font-size: 62.5%; /*1rem = 10px*/
+}
+
+body {
+	/*Temporary get rid of it*/
+	overflow-x: hidden;
+	font-family: var(--ff-body);
+	font-size: inherit;
+	color: var(--clr-primary);
+}
+
+a {
+	text-decoration: none;
+}
+/* Default Settings End*/
+
+/* Text Headings Start */
+
+h1 {
+	font-family: var(--ff-title);
+	font-size: 20rem;
+	line-height: 1;
+}
+/* Utility Classes Start */
+/* Here is where we put:
+- Background faded text
+- Image styles
+- Flower corner addon 
+- Background svg curve 
+- And Row class like how bootstrap does it.
+- Sections like max width, to keep things the same and reduce css code
+- Anything that can be reuseable throughout the website thats not unique to a section
+ */
+.open {
+	display: flex !important;
+	opacity: 1 !important;
+	visibility: visible !important;
+}
+
+.open div {
+	opacity: 0% !important;
+}
+.open svg {
+	opacity: 100% !important;
+}
+/* Curved Background Start*/
+.curvedBackground {
+	position: relative;
+	overflow: hidden;
+	height: 80px;
+}
+.curvedBackground::before {
+	border-radius: 100%;
+	position: absolute;
+	background: var(--clr-bg);
+	right: -500px;
+	left: -500px;
+	top: -580px;
+	content: "";
+	bottom: 0;
+	z-index: -2;
+}
+
+.aboutUsSection {
+	position: relative;
+}
+
+.curvedBackground-w {
+	position: absolute;
+	overflow: hidden;
+	height: 350px;
+	width: 100%;
+}
+.curvedBackground-w::before {
+	border-radius: 100%;
+	position: absolute;
+	background: var(--clr-secondary);
+	right: -500px;
+	left: -500px;
+	top: -400px;
+	content: "";
+	bottom: 200px;
+	z-index: -1;
+}
+
+/* Curved Background End */
+.container {
+	max-width: var(--max-screen);
+	margin: 0 auto;
+	padding: 0 2rem;
+}
+
+.imgCard-Container {
+	position: relative;
+}
+
+.imgCard-Container .imgB {
+	position: absolute;
+	left: -18%;
+	bottom: -14%;
+	width: 8rem;
+	transform: rotate(180deg);
+}
+
+.imgCard-Container .imgT {
+	position: absolute;
+	top: -10%;
+	right: -16%;
+	width: 8rem;
+	transform: rotate(-6deg);
+}
+
+.imgCard {
+	width: 40rem;
+	height: 48rem;
+	border-radius: 18rem 6rem 18rem 0;
+}
+
+.headingText {
+	position: relative;
+	left: 0%;
+}
+
+.header .headingText h2 {
+	position: absolute;
+	top: -8%;
+}
+
+.headingText h2 {
+	position: absolute;
+	top: -60%;
+}
+
+/* Utility Classes End */
+
+/* Default Buttons Start */
+.btn:link,
+.btn:visited {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: fit-content;
+	background-color: var(--clr-accent);
+	color: var(--clr-secondary);
+	border: 2px solid var(--clr-accent);
+	padding: 1rem 2.4rem;
+	border-radius: 1000px;
+	font-size: 1.6rem;
+	margin-top: 1rem;
+	transition: var(--hover-transition);
+}
+
+.btn:hover,
+.btn:active {
+	background-color: transparent;
+	color: var(--clr-accent);
+}
+/* All button styles and hover animations/effects */
+/* Default Buttons End */
+
+/* Text Headings Start */
+/* Text Headings End */
+
+/* Text Styling Start */
+/* Text Styling End */
+
+/* Utility Classes Start */
+/* Here is where we put:
+- Background faded text
+- Image styles
+- Flower corner addon 
+- Background svg curve 
+- And Row class like how bootstrap does it.
+- Sections like max width, to keep things the same and reduce css code
+- Anything that can be reuseable throughout the website thats not unique to a section
+ */
+/* Utility Classes End */
+
+/* Default Buttons Start */
+/* All button styles and hover animations/effects */
+/* Default Buttons End */
+
+/* Navbar Start */
+header {
+	background-color: var(--clr-bg);
+	position: relative;
+}
+
+.burgerMenuLink {
+	display: none !important;
+	position: relative;
+	flex-direction: column;
+	gap: 0.6rem;
+	transition: var(--hover-transition);
+}
+.burgerMenuLink svg {
+	opacity: 0;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	width: 40px;
+	height: 25px;
+	z-index: 999999;
+	transition: var(--hover-transition);
+}
+.burgerMenu-1 {
+	position: relative;
+	width: 40px;
+	height: 4px;
+	border-radius: 100px;
+	background-color: #31210f;
+	transition: var(--hover-transition);
+}
+.burgerMenu-2 {
+	width: 40px;
+	height: 4px;
+	border-radius: 100px;
+	background-color: #31210f;
+	transition: var(--hover-transition);
+}
+
+.burgerMenu-3 {
+	width: 40px;
+	height: 4px;
+	border-radius: 100px;
+	background-color: #31210f;
+	transition: var(--hover-transition);
+}
+
+.navbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 1.6rem;
+	padding-top: 2rem;
+	z-index: 999;
+}
+.navLogo {
+	max-width: 26rem;
+}
+
+.navMenu {
+	display: flex;
+	gap: 5rem;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	transition: var(--hover-transition);
+}
+
+.navAccount {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+}
+
+.navMenu a:link,
+.navMenu a:visited,
+.navMenu a:link svg path,
+.navMenu a:visited svg path {
+	display: flex;
+	color: var(--clr-primary);
+	transition: var(--hover-transition);
+}
+
+.navMenu a:hover,
+.navMenu a:active {
+	color: var(--clr-accent);
+}
+.navMenu a:hover svg path,
+.navMenu a:hover svg path {
+	stroke: var(--clr-accent);
+}
+
+/* Navbar End */
+
+/* Main Start */
+.main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 3rem;
+	align-items: center;
+	padding: 20rem;
+	padding-top: 12rem;
+}
+/* Main End */
+/* Footer Start */
+.footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding-top: 4rem;
+}
+
+.footerContent {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+}
+
+.footerContent ul {
+	display: flex;
+	gap: 4rem;
+	justify-self: center;
+	align-items: center;
+	list-style: none;
+	margin: 2rem 0;
+}
+
+.footerContent ul li a:link,
+.footerContent ul li a:visited {
+	font-size: 1.6rem;
+	font-weight: bold;
+	color: var(--clr-primary);
+	transition: var(--hover-transition);
+}
+
+.footerContent ul li a:hover,
+.footerContent ul li a:active {
+	color: var(--clr-accent);
+}
+
+.footerLogo img {
+	max-width: 280px;
+}
+
+.footerEmail a:link,
+.footerEmail a:visited {
+	font-size: 1.2rem;
+	color: var(--clr-primary);
+	transition: var(--hover-transition);
+}
+
+.footerEmail a:hover,
+.footerEmail a:active {
+	color: var(--clr-accent);
+}
+
+.footerNumber {
+	font-size: 1.2rem;
+	color: var(--clr-primary);
+}
+
+.footerNumber a:link,
+.footerNumber a:visited {
+	font-size: 1.2rem;
+	color: inherit;
+	transition: var(--hover-transition);
+}
+
+.footerNumber a:hover,
+.footerNumber a:active {
+	color: var(--clr-accent);
+}
+
+.footerSocial {
+	display: flex;
+	gap: 1rem;
+}
+.footerSocial a:link svg path,
+.footerSocial a:visited svg path {
+	transition: var(--hover-transition);
+}
+.footerSocial .fb:hover svg path,
+.footerSocial .fb:active svg path {
+	fill: var(--clr-accent);
+}
+
+.footerSocial .insta:hover svg path,
+.footerSocial .insta:active svg path {
+	stroke: var(--clr-accent);
+}
+
+.ownership {
+	display: flex;
+	flex-direction: column;
+	justify-self: center;
+	align-items: center;
+	margin-top: 2rem;
+	text-align: center;
+}
+.ownership::before {
+	content: "";
+	width: 80%;
+	margin: 0 auto;
+	height: 1px;
+	background-color: rgba(49, 33, 15, 0.2);
+	margin-bottom: 2rem;
+}
+
+.ownership p {
+	font-size: 1.2rem;
+}
+
+.ownership a:link,
+.ownership a:visited {
+	font-weight: bold;
+	text-decoration: underline;
+	color: var(--clr-primary);
+	transition: var(--hover-transition);
+}
+
+.ownership a:hover,
+.ownership a:active {
+	color: var(--clr-accent);
+}
+
+.curvedBackground-f {
+	position: absolute;
+	overflow: hidden;
+	width: 100%;
+}
+
+.curvedBackground-f::before {
+	border-radius: 100%;
+	position: absolute;
+	background: var(--clr-bg);
+	right: -500px;
+	left: -500px;
+	top: 0;
+	content: "";
+	bottom: -200px;
+	z-index: -1;
+}
+/* Footer End */
+
+/* Animations Start*/
+/* Animations End*/
+
+/* Media Queries Start*/
+@media only screen and (max-width: 960px) {
+	.navMenu {
+		opacity: 0;
+		visibility: hidden;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		top: 0%;
+		margin-left: -2rem; /*Fix in future*/
+		background-color: var(--clr-bg);
+		z-index: 99999;
+	}
+	.navMenu a:link,
+	.navMenu a:visited {
+		font-size: 4rem;
+		font-weight: bold;
+	}
+	.burgerMenuLink {
+		display: flex !important;
+		opacity: 1;
+		visibility: visible;
+	}
+}
+@media only screen and (max-width: 500px) {
+	.navLogo {
+		width: 20rem;
+	}
+	.footerContent ul {
+		flex-direction: column;
+		gap: 2rem;
+	}
+	.footerLogo img {
+		width: 20rem;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.main {
+		padding: 12rem 0;
+		padding-bottom: 16rem;
+	}
+	h1 {
+		font-size: 14rem;
+	}
+}
+/* Media Queries End */
