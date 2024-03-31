@@ -404,6 +404,7 @@ header {
 
 .blog .headingText h2 {
 	left: -60%;
+	text-wrap: nowrap;
 }
 
 .blogContent {
