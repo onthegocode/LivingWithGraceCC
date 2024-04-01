@@ -56,6 +56,7 @@ h2 {
 	color: rgba(49, 33, 15, 0.06);
 	font-size: 11.4rem;
 	text-wrap: nowrap;
+	white-space: nowrap;
 	z-index: 0;
 }
 
