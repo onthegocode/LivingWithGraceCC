@@ -660,6 +660,7 @@ header {
 .blog .headingText h2 {
 	left: -60%;
 	text-wrap: nowrap !important;
+	white-space: nowrap;
 }
 
 .blogContent {
