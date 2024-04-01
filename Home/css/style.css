@@ -549,6 +549,7 @@ header {
 .services .headingText h2 {
 	left: -20%;
 	text-wrap: nowrap !important;
+	white-space: nowrap;
 }
 
 .serviceContent {
